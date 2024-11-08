@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+/* CSS VARIABLES */
+:root {
+  /* COLORS */
+  --primary-color-1: hsl(300, 43%, 22%);
+  --primary-color-2: hsl(333, 80%, 67%);
+  --color-txt: hsl(303, 10%, 53%);
+  --color-rate-bg: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+/* media-queries */
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-mediumSmall: 50em; //800px
+$bp-small: 43.75em; //700px
+$bp-smaller: 37.5em; //600px
+
+/* GLOBAL SETTINGS */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 43.75%;
+  }
+  @media only screen and (max-width: $bp-mediumSmall) {
+    font-size: 37.5%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    font-size: 31.25%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.5rem;
+  font-family: "League Spartan", sans-serif;
+  line-height: 1.6;
+  background-image: url(/images/bg-pattern-top-desktop.svg),
+    url(/images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 500px, 1000px;
+  background-position: top left, bottom right;
+  // CENTER CONTENT
+  display: grid;
+  place-content: center;
+  @media only screen and (max-width: $bp-small) {
+    background-image: url(/images/bg-pattern-top-mobile.svg),
+      url(/images/bg-pattern-bottom-mobile.svg);
+    background-size: 300px, 500px;
+    margin: 0;
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+/* footer styling */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--primary-color-2);
+}

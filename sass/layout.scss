@@ -1,0 +1,134 @@
+@use "../sass/base.scss" as var1;
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, 30rem);
+  grid-template-columns: 45rem 50rem;
+  gap: 4rem 15rem;
+  @media only screen and (max-width: var1.$bp-smaller) {
+    padding: 8rem 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 0.3fr);
+    gap: 5rem;
+  }
+  .part1 {
+    grid-area: 1/1/2/2;
+    align-self: center;
+    @media only screen and (max-width: var1.$bp-smaller) {
+      grid-area: 1/1/2/-1;
+      text-align: center;
+    }
+    &__primary-heading {
+      font-size: 6rem;
+      line-height: 0.85;
+      font-weight: 700;
+      color: var(--primary-color-1);
+      margin-bottom: 2rem;
+      @media only screen and (max-width: var1.$bp-smaller) {
+        font-size: 4.5rem;
+      }
+    }
+    &__description {
+      font-weight: 500;
+      font-size: 1.8rem;
+      color: var(--color-txt);
+    }
+  }
+  .part2 {
+    grid-area: 1/2/2/-1;
+    align-self: center;
+    @media only screen and (max-width: var1.$bp-smaller) {
+      grid-area: 2/1/3/-1;
+    }
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    &__reviews,
+    &__guru,
+    &__best {
+      width: 80%;
+      display: flex;
+      gap: 3rem;
+      justify-content: start;
+      align-items: center;
+      padding: 1.4rem 2rem;
+      border-radius: 0.5rem;
+      background-color: rgb(249 239 249);
+      @media only screen and (max-width: var1.$bp-smaller) {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      &--stars {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+    }
+    &__star {
+      height: 1.5rem;
+    }
+    &__detail {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-color-1);
+    }
+    &__review {
+      align-self: flex-start;
+    }
+    &__guru {
+      align-self: center;
+    }
+    &__best {
+      align-self: flex-end;
+    }
+  }
+  .part3 {
+    grid-area: 2/1/-1/-1;
+    color: var(--color-rate-bg);
+    display: flex;
+    gap: 3rem;
+    @media only screen and (max-width: var1.$bp-smaller) {
+      grid-area: 3/1/-1/-1;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    &__reviewer1,
+    &__reviewer2,
+    &__reviewer3 {
+      background-color: var(--primary-color-1);
+      border-radius: 1rem;
+      padding: 3rem;
+      @media only screen and (max-width: var1.$bp-smaller) {
+        width: 100%;
+      }
+    }
+    &__user-details {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      &--img {
+        height: 4rem;
+        border-radius: 50%;
+      }
+      &--name {
+        &-1 {
+          font-weight: 700;
+        }
+        &-2 {
+          color: var(--primary-color-2);
+        }
+      }
+    }
+    &__reviewer1 {
+      align-self: flex-start;
+    }
+    &__reviewer2 {
+      align-self: center;
+    }
+    &__reviewer3 {
+      align-self: flex-end;
+    }
+  }
+}
