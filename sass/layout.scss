@@ -4,21 +4,27 @@
   grid-template-rows: repeat(2, 30rem);
   grid-template-columns: 45rem 50rem;
   gap: 4rem 15rem;
+  margin-top: 2rem;
   @media only screen and (max-width: var1.$bp-smaller) {
     padding: 8rem 2rem;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 0.3fr);
     gap: 5rem;
+    margin: 0;
   }
+
+  // part-1
   .part1 {
     grid-area: 1/1/2/2;
     align-self: center;
+    padding: 0 1rem;
     @media only screen and (max-width: var1.$bp-smaller) {
       grid-area: 1/1/2/-1;
       text-align: center;
+      padding: 0;
     }
     &__primary-heading {
-      font-size: 6rem;
+      font-size: 5rem;
       line-height: 0.85;
       font-weight: 700;
       color: var(--primary-color-1);
@@ -33,6 +39,8 @@
       color: var(--color-txt);
     }
   }
+
+  // part-2
   .part2 {
     grid-area: 1/2/2/-1;
     align-self: center;
@@ -41,7 +49,7 @@
     }
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
 
     &__reviews,
     &__guru,
@@ -51,13 +59,16 @@
       gap: 3rem;
       justify-content: start;
       align-items: center;
-      padding: 1.4rem 2rem;
+      padding: 1.2rem 2rem;
       border-radius: 0.5rem;
-      background-color: rgb(249 239 249);
+      background-color: rgb(248, 242, 248);
       @media only screen and (max-width: var1.$bp-smaller) {
-        width: 100%;
+        // width: 70%;
         flex-direction: column;
         gap: 1rem;
+      }
+      @media only screen and (max-width: var1.$bp-Xsmall) {
+        width: 100%;
       }
       &--stars {
         display: flex;
@@ -83,6 +94,8 @@
       align-self: flex-end;
     }
   }
+
+  // part-3
   .part3 {
     grid-area: 2/1/-1/-1;
     color: var(--color-rate-bg);
@@ -100,6 +113,9 @@
       border-radius: 1rem;
       padding: 3rem;
       @media only screen and (max-width: var1.$bp-smaller) {
+        width: 80%;
+      }
+      @media only screen and (max-width: var1.$bp-Xsmall) {
         width: 100%;
       }
     }

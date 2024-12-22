@@ -16,6 +16,7 @@ $bp-medium: 56.25em; //900px
 $bp-mediumSmall: 50em; //800px
 $bp-small: 43.75em; //700px
 $bp-smaller: 37.5em; //600px
+$bp-Xsmall: 31.25em; //500px
 
 /* GLOBAL SETTINGS */
 html {
@@ -33,8 +34,10 @@ html {
   @media only screen and (max-width: $bp-small) {
     font-size: 31.25%;
   }
+  @media only screen and (max-width: $bp-smaller) {
+    font-size: 43.75%;
+  }
 }
-
 body {
   min-height: 100vh;
   font-size: 1.5rem;
@@ -45,14 +48,20 @@ body {
   background-repeat: no-repeat;
   background-size: 500px, 1000px;
   background-position: top left, bottom right;
+  @media only screen and (max-width: $bp-medium) {
+    background-size: 300px, 600px;
+  }
+
   // CENTER CONTENT
   display: grid;
   place-content: center;
   @media only screen and (max-width: $bp-small) {
     background-image: url(/images/bg-pattern-top-mobile.svg),
       url(/images/bg-pattern-bottom-mobile.svg);
-    background-size: 300px, 500px;
+    background-size: 300px, 600px;
+    background-position: top left, bottom right;
     margin: 0;
+    // place-content: center;
   }
 }
 
